@@ -1,0 +1,106 @@
+{% extends 'optimizer/base.html' %}
+
+{% block content %}
+<style>
+    /* Optimizer Form Styles */
+    .form-container {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        width: 100%;
+        max-width: 1000px;
+        margin: 2rem auto;
+        color: #333;
+        align-self: start;
+    }
+
+    h2 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        color: #2c3e50;
+        width: 250px; /* Fixed width for labels */
+        flex-shrink: 0; /* Prevent label from shrinking */
+        text-align: left;
+        font-size: 1.25rem; /* Corrected property */
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 0.5rem; /* Adjust padding for input size */
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem; /* Adjust font size */
+        width: 200%; /* Set width to 100% of the container */
+        max-width: 600px; /* Optional: Set a maximum width */
+        box-sizing: border-box;
+        flex-grow: 1; /* Input takes remaining space */
+    }
+
+
+    .form-group input:focus,
+    .form-group select:focus {
+        border-color: #3498db;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    }
+
+    .btn {
+        background-color: #3498db;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        display: block;
+        margin: 1.5rem auto 0;
+        width: auto;
+    }
+
+    .btn:hover {
+        background-color: #2980b9;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+        .form-group {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .form-group label {
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+    }
+</style>
+<h1>Optimize Your Supply Chain</h1>
+<div class="form-container">
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-fields">
+            {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+            </div>
+            {% endfor %}
+        </div>
+        <button type="submit" class="btn">Optimize</button>
+    </form>
+</div>
+{% endblock %}

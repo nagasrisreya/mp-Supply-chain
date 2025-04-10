@@ -1,0 +1,43 @@
+{% extends 'optimizer/base.html' %}
+
+{% block content %}
+<div style="text-align: left;">
+    <h2>Optimization Results</h2>
+</div>
+
+<!-- Results Table -->
+<table>
+    <thead>
+        <tr>
+            <th>Supplier</th>
+            <th>Warehouse</th>
+            <th>Product</th>
+            <th>Units to Ship</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for key, value in results.items %}
+            <tr>
+                <td>{{ key.0 }}</td>  <!-- Supplier -->
+                <td>{{ key.1 }}</td>  <!-- Warehouse -->
+                <td>{{ key.2 }}</td>  <!-- Product -->
+                <td>{{ value }}</td>  <!-- Units to Ship -->
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<!-- Analysis Section -->
+<div class="analysis">
+    <h3>Analysis</h3>
+    <ul>
+        <li><strong>Total Units Shipped:</strong> {{ total_units_shipped }}</li>
+        <li><strong>Total Cost:</strong> ${{ total_cost|floatformat:2 }}</li>
+        <li><strong>Supplier Utilization:</strong> {{ supplier_utilization|floatformat:2 }}%</li>
+        <li><strong>Warehouse Utilization:</strong> {{ warehouse_utilization|floatformat:2 }}%</li>
+    </ul>
+</div>
+
+<!-- Button to go back to the home page -->
+<a href="{% url 'home' %}" class="btn">Back to Home</a>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'optimizer/base.html' %}
+
+{% block content %}
+<div style="text-align: center;">
+    <h1>Welcome to the Supply Chain Optimizer</h1>
+    <p>Click the buttons below to start optimizing your supply chain or view inventory.</p>
+</div>
+<a href="{% url 'optimize' %}" class="btn">Go to Optimizer</a>
+<a href="{% url 'inventory' %}" class="btn">View Inventory</a>
+{% endblock %}
