@@ -180,3 +180,8 @@ def logout_view(request):
     logout(request)
     messages.success(request, 'You have successfully logged out.')
     return redirect('login')
+
+from django.shortcuts import render
+
+def help_page(request):
+    return render(request, 'optimizer/help.html')

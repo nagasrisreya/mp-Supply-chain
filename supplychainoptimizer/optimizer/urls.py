@@ -10,4 +10,5 @@ urlpatterns = [
     path('login/', views.login_view, name='login'),  # Login page
     path('register/', views.register_view, name='register'),  # Register page
     path('logout/', views.logout_view, name='logout'),
+    path('help/', views.help_page, name='help'),  # Add this line for the help page
 ]

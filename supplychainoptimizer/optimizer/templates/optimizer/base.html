@@ -297,6 +297,8 @@
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'optimize' %}">Optimize</a></li>
                 <li><a href="{% url 'inventory' %}">Inventory</a></li>
+                <li><a href="{% url 'help' %}">Help</a></li> <!-- Add Help link -->
+        
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'logout' %}">Logout</a></li>
                 {% else %}

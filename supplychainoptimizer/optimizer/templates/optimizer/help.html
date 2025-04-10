@@ -1,0 +1,18 @@
+{% extends 'optimizer/base.html' %}
+
+{% block content %}
+
+<div style="margin: 20px auto; max-width: 800px; text-align: left;">
+    <h2>How to Use This Webpage</h2>
+    <ol>
+        <li><strong>Login/Register:</strong> If you are a new user, register for an account. If you already have an account, log in to access the features.</li>
+        <li><strong>Optimize Supply Chain:</strong> Click on the "Go to Optimizer" button to input supplier, warehouse, product, and transportation details. Submit the form to calculate the optimal supply chain strategy.</li>
+        <li><strong>View Inventory:</strong> Click on the "View Inventory" button to see the results of your optimization, including details like supplier utilization, warehouse utilization, and total cost.</li>
+        <li><strong>Manage Inventory:</strong> On the inventory page, you can delete individual records or clear all records using the provided buttons.</li>
+        <li><strong>Logout:</strong> When you're done, click the "Logout" button in the navigation bar to securely log out of your account.</li>
+    </ol>
+</div>
+
+<a href="{% url 'optimize' %}" class="btn">Go to Optimizer</a>
+<a href="{% url 'inventory' %}" class="btn">View Inventory</a>
+{% endblock %}
