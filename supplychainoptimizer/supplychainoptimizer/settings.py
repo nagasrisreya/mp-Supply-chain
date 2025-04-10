@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-m&^x7*!kg962ye3ha3u1smftxu300aw-=f61p9smked84)qpj3
 DEBUG = True
 
 # Allow all hosts for development (update this for production)
-ALLOWED_HOSTS = ['supplychainoptimizer-ksgs.onrender.com','127.0.0.1']
+ALLOWED_HOSTS = ['supplychainoptimizer.onrender.com','127.0.0.1']
 
 
 # Application definition
